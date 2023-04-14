@@ -8,8 +8,24 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Accueil</Text>
       <StatusBar style="auto" />
+    </View>
+  );
+}
+
+function NewsScreen() {
+  return (
+    <View style={styles.news}>
+      <Text>Page pour suivre un signalement</Text>
+    </View>
+  );
+}
+
+function HSE() {
+  return (
+    <View style={styles.hse}>
+      <Text>Page lois HSE</Text>
     </View>
   );
 }
@@ -17,7 +33,7 @@ function HomeScreen() {
 function SettingsScreen() {
   return (
     <View style={styles.setting}>
-      <Text>Settings!</Text>
+      <Text>Paramètres</Text>
     </View>
   );
 }
@@ -28,8 +44,10 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Accueil" component={HomeScreen} />
+      <Tab.Screen name="Signalements" component={NewsScreen} />
+      <Tab.Screen name="HSE" component={HSE} />
+      <Tab.Screen name="Paramètres" component={SettingsScreen} />
     </Tab.Navigator>
   );
 }
@@ -51,6 +69,19 @@ const styles = StyleSheet.create({
   },
   setting: {
     flex: 1,
+    backgroundColor: "#fff",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  news: {
+    flex: 1,
+    backgroundColor: "#fff",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  hse: {
+    flex: 1,
+    backgroundColor: "#fff",
     justifyContent: 'center',
     alignItems: 'center',
   },
