@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TextInput } from 'react-nati
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function HomeScreen() {
   return (
@@ -44,8 +45,19 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Accueil" component={HomeScreen} />
-      <Tab.Screen name="Signalements" component={NewsScreen} />
+      <Tab.Screen 
+        name="Accueil"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Accueil',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" 
+              color={color} 
+              size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen name="Signalements"component={NewsScreen} />
       <Tab.Screen name="HSE" component={HSE} />
       <Tab.Screen name="Paramètres" component={SettingsScreen} />
     </Tab.Navigator>
