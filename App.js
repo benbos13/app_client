@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TextInput } from 'react-nati
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign, Entypo, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 function HomeScreen() {
   return (
@@ -51,15 +51,37 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Accueil',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" 
-              color={color} 
-              size={size} />
+            <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen name="Signalements"component={NewsScreen} />
-      <Tab.Screen name="HSE" component={HSE} />
-      <Tab.Screen name="Paramètres" component={SettingsScreen} />
+      <Tab.Screen
+        name="Signalements"
+        component={NewsScreen}
+        options={{
+          tabBarLabel: 'Signalements',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="report-problem" size={size} color={color} />
+          ),
+        }}/>
+      <Tab.Screen
+        name="HSE"
+        component={HSE}
+        options={{
+          tabBarLabel: 'HSE',
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="open-book" size={size} color={color} />
+          ),
+        }}/>
+      <Tab.Screen
+        name="Paramètres"
+        component={SettingsScreen}
+        options={{
+          tabBarLabel: 'Paramètres',
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="setting" size={size} color={color} />
+          ),
+        }}/>
     </Tab.Navigator>
   );
 }
