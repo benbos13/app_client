@@ -17,11 +17,10 @@ export default function LoginScreen({ navigation }) {
         />
       </View>
       <Pressable 
-        style={styles.button}
-        title="Submit"  
+        style={styles.button} 
         onPress={() => navigation.navigate('MyTabs')}  
       >
-        <Text style ={{color:"white"}}>Submit</Text>
+        <Text style ={{color:"white"}}>Se connecter</Text>
     </Pressable> 
     </SafeAreaView> 
   );

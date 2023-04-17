@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     },
     setting: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#f5f5f8",
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -51,5 +51,20 @@ export const styles = StyleSheet.create({
       backgroundColor: '#007aff',
       width: 200,
       bottom: 300,
+    },
+    deconnect: {
+      paddingVertical: 12,
+      borderColor: "#f5f5f8",
+      borderWidth: 1,
+      backgroundColor: 'white',
+      width: 390,
+      bottom: 300,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    text_disconnect: {
+      paddingTop: 5,
+      color: 'red',
+      left: 10,
     },
   });
