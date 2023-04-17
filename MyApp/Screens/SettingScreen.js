@@ -1,17 +1,36 @@
 import { Pressable, Text, View, } from 'react-native';
 import {styles} from '../Styles'
 import { Entypo } from '@expo/vector-icons';
+import { Alert} from 'react-native';
+
+
+const createTwoButtonAlert = (navigation) => {
+  Alert.alert('Voulez-vous vous déconnecter ?', '', [
+    {
+      text: 'Cancel',
+      onPress: () => console.log('Cancel Pressed'),
+      style: 'cancel',
+    },
+    {
+      text: 'OK',
+       onPress: () => navigation.navigate('Login')
+    }
+  ]);  
+}
+
 
 
 export default function SettingScreen({navigation}) {
-    return (
+  const handlePress = () => {
+    createTwoButtonAlert(navigation);
+  };
+  return (
       <View style={styles.setting}>
         
         <Pressable 
           style={styles.deconnect}
-          onPress={() => navigation.navigate('Login')}
-        >
-          
+          onPress={() => handlePress()}
+        > 
           <Text style ={styles.text_disconnect} >
             Se déconnecter
           </Text>
