@@ -25,9 +25,21 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
     },
-    textinput: {
+    input: {
+      bottom: -100,
+      width: 250,
       height: 40,
-      borderColor: 'gray',
+      margin: 12,
       borderWidth: 1,
+      padding: 10,
+    },
+    button: {
+      
+    },
+    login: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   });

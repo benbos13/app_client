@@ -1,15 +1,21 @@
 import React from 'react';
+import {SafeAreaView, Button, View, Text, Image, ScrollView, TextInput} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import MyTabs from './MyApp/MyTabs';
+import LoginScreen from './MyApp/Screens/LoginScreen';
+import {styles} from './MyApp/Styles';
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <MyTabs/>
+      <Stack.Navigator initialRouteName="Home" >
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen options={{headerShown: false}} name="MyTabs" component={MyTabs}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
