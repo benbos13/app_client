@@ -33,13 +33,20 @@ export const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 10,
     },
-    button: {
-      
-    },
     login: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    button: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: 'blue',
+      flex: 1,
     },
   });

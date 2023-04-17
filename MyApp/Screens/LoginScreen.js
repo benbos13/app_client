@@ -1,6 +1,7 @@
-
-import { TextInput, View, SafeAreaView, Button} from 'react-native';
+import { Pressable , Text, TextInput, View, SafeAreaView, Button} from 'react-native';
 import {styles} from '../Styles';
+
+
 
 export default function LoginScreen({ navigation }) {
     return (
@@ -15,7 +16,7 @@ export default function LoginScreen({ navigation }) {
             placeholder="mot de passe"
           />
         </View>
-        <Button  
+        <Button 
           style={styles.button}
           title="Submit"  
           onPress={() => navigation.navigate('MyTabs')}  
