@@ -6,8 +6,6 @@ import HSE from './Screens/HSE'
 import ReportScreen from './Screens/ReportScreen'
 import SettingsScreen from './Screens/SettingScreen'
 
-
-
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
