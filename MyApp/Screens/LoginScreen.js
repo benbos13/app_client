@@ -4,23 +4,25 @@ import {styles} from '../Styles';
 
 
 export default function LoginScreen({ navigation }) {
-    return (
-      <SafeAreaView>
-        <View style={styles.login}>
-          <TextInput
-            style={styles.input}
-            placeholder="email"
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="mot de passe"
-          />
-        </View>
-        <Button 
-          style={styles.button}
-          title="Submit"  
-          onPress={() => navigation.navigate('MyTabs')}  
+  return (
+    <SafeAreaView style ={styles.login}>
+      <View style={styles.login}>
+        <TextInput
+          style={styles.input}
+          placeholder="email"
         />
-      </SafeAreaView> 
-    );
-  }
+        <TextInput
+          style={styles.input}
+          placeholder="mot de passe"
+        />
+      </View>
+      <Pressable 
+        style={styles.button}
+        title="Submit"  
+        onPress={() => navigation.navigate('MyTabs')}  
+      >
+        <Text style ={{color:"white"}}>Submit</Text>
+    </Pressable> 
+    </SafeAreaView> 
+  );
+}

@@ -7,6 +7,11 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    login: {
+      flex: 1,
+      borderColor: 'gray',
+      borderWidth: 100,
+    },
     setting: {
       flex: 1,
       backgroundColor: "#fff",
@@ -26,7 +31,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
     },
     input: {
-      bottom: -100,
+      bottom: 50,
       width: 250,
       height: 40,
       margin: 12,
@@ -41,12 +46,11 @@ export const styles = StyleSheet.create({
     },
     button: {
       alignItems: 'center',
-      justifyContent: 'center',
       paddingVertical: 12,
-      paddingHorizontal: 32,
       borderRadius: 4,
-      elevation: 3,
-      backgroundColor: 'blue',
-      flex: 1,
+      backgroundColor: '#007aff',
+      width: 200,
+      bottom: 300,
+
     },
   });
