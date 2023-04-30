@@ -26,7 +26,6 @@ export default function SettingScreen({navigation}) {
   };
   return (
       <View style={styles.setting}>
-        
         <Pressable 
           style={styles.deconnect}
           onPress={() => handlePress()}
