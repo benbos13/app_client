@@ -7,12 +7,12 @@ import { Alert} from 'react-native';
 const createTwoButtonAlert = (navigation) => {
   Alert.alert('Voulez-vous vous déconnecter ?', '', [
     {
-      text: 'Cancel',
+      text: 'Non',
       onPress: () => console.log('Cancel Pressed'),
       style: 'cancel',
     },
     {
-      text: 'OK',
+      text: 'Oui',
        onPress: () => navigation.navigate('Login')
     }
   ]);  
