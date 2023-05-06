@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image } from 'react-native';
 
 
-export class PhotoScreen extends React.Component {
+export class ImageScreen extends React.Component {
   render() {
     const photouri = this.props.route.params.photouri;
     return (

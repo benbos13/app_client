@@ -3,9 +3,9 @@ import { AntDesign, Entypo, MaterialIcons, MaterialCommunityIcons } from '@expo/
 
 import HomeScreen from './Tabs/HomeScreen/HomeScreen'
 import HSE from './Tabs/HSE'
-import ReportScreen from './Tabs/ReportScreen'
-import SettingsScreen from './Tabs/SettingScreen'
-import {styles} from './Styles'
+import ReportScreen from './Tabs/Signalement'
+import SettingsScreen from './Tabs/Parametres'
+
 
 const Tab = createBottomTabNavigator();
 

@@ -1,5 +1,5 @@
 import {  Text, View, } from 'react-native';
-import {styles} from '../../Styles'
+import {styles} from '../../../Styles'
 import {Mycamera} from './Report/Report'
 import button_risk from './button_risk';
 

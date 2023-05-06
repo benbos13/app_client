@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Text, View, TouchableOpacity, TextInput, Keyboard} from 'react-native';
 
-import {styles} from '../../../Styles'
+import {styles} from '../../../../Styles'
 
 
 import { Camera } from 'expo-camera';
