@@ -1,15 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, Entypo, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-
-
-import HomeScreen from './Screens/HomeScreen'
-import HSE from './Screens/HSE'
-import ReportScreen from './Screens/ReportScreen'
-import SettingsScreen from './Screens/SettingScreen'
-import button_camera from './button_risk';
+import HomeScreen from './Tabs/HomeScreen/HomeScreen'
+import HSE from './Tabs/HSE'
+import ReportScreen from './Tabs/ReportScreen'
+import SettingsScreen from './Tabs/SettingScreen'
 import {styles} from './Styles'
-import Mycamera from './Screens/Camera';
 
 const Tab = createBottomTabNavigator();
 

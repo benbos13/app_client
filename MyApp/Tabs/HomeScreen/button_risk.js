@@ -1,6 +1,6 @@
-import {Text, View, Pressable } from 'react-native';
-import {styles} from './Styles'
-import { AntDesign } from '@expo/vector-icons';
+import { Pressable, Text} from 'react-native';
+import { AntDesign} from '@expo/vector-icons'
+import { styles} from '../../Styles';
 
 export default function button_risk({navigation}) {
     return(
