@@ -75,7 +75,7 @@ export class Mycamera extends React.Component {
       },
       method: 'POST'
     })
-    .then(response => response.json())
+    //.then(response => response.json())            /!\ ME LOG UNE ERREUR CAR LE SERVEUR NE RENVOIE PAS UN JSON (NORMAL) /!\
   }
 
   // Récupère l'uri de la photo pour le placer dans la variable global afin qu'il soit accessible de partout dans le programme
