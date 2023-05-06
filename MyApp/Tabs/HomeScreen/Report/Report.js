@@ -111,9 +111,11 @@ export class Mycamera extends React.Component {
     return (
       <View style={styles.container_camera}>
         {cameraPermission === null ? (
-          <Text>Waiting for permission...</Text>
+          <Text>En attente de la permission...</Text>
         ) : cameraPermission === false ? (
-          <Text>Permission denied</Text>
+          <Text>
+            La permission pour la caméra n'est pas accordée. Veuillez aller dans les paramètres de votre téléphone pour l'activer.
+          </Text>
         ) : (
           <View style={{ flex: 1, width: '100%' }}>
             {takePicture ? (
