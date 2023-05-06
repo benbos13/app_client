@@ -9,7 +9,7 @@ import * as Permissions from 'expo-camera';
 import * as Media_permission from 'expo-media-library'
 import { MaterialIcons, EvilIcons } from '@expo/vector-icons';
 
-// const FOCUS_TIME = 3000;
+
 const SERVER_URL = 'http://192.168.1.188:5005/'
 
 let photouri = null;
@@ -20,11 +20,10 @@ export class Mycamera extends React.Component {
 
   constructor(props) {
     super(props);
-   // this.state = { : '' };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  // initialize state
+  // Initialisation des états
   state = {
     cameraPermission: null,
     takePicture: false,
@@ -33,8 +32,6 @@ export class Mycamera extends React.Component {
   };
 
   // Méthode :
-
- 
 
   // Demande des permissions
   componentDidMount() {
@@ -52,10 +49,12 @@ export class Mycamera extends React.Component {
       );
   }
 
+  // Changement d'état après avoir pris une photo
   takePicture = () => {
     this.setState({ takePicture: true });
   }
 
+  // Envoi du signalement
   sendReport = () => {
     console.log('Input value:', this.state.inputValue);
     this.uploadReport()
@@ -64,6 +63,7 @@ export class Mycamera extends React.Component {
     this.props.navigation.navigate('MyTabs');
   };
 
+  // Upload sur le serveur le signalement
   uploadReport =  () => {
     return fetch(SERVER_URL, {
       body: JSON.stringify({
@@ -78,6 +78,7 @@ export class Mycamera extends React.Component {
     .then(response => response.json())
   }
 
+  // Récupère l'uri de la photo pour le placer dans la variable global afin qu'il soit accessible de partout dans le programme
   onPictureTaken = (photo) => {
     if (photo == null) return null;
     photouri = photo.uri;
@@ -86,7 +87,7 @@ export class Mycamera extends React.Component {
     this.setState({ isPictureTaken: true}); // i.e Appel de dispLink
   }
 
-
+  // Affichage du "lien" vers l'image prise
   dispLink =() => {
   return (
     <TouchableOpacity style={styles.goto_image} onPress={() => {this.props.navigation.navigate('Photo', { photouri: photouri });}}>
@@ -95,20 +96,22 @@ export class Mycamera extends React.Component {
     </TouchableOpacity>
   )};
 
+  // Ferme le clavier 
   handlePress = () => {
     Keyboard.dismiss();
   };
 
+  // Gestion de l'input commentaire
   handleInputChange(text) {
     console.log(text);
     this.setState({ inputValue: text });
   }
 
   // Mise en page
-
   render() {
     const { cameraPermission, takePicture, isPictureTaken, inputValue } = this.state;
     return (
+      // Demande de permission d'accés à la camera
       <View style={styles.container_camera}>
         {cameraPermission === null ? (
           <Text>En attente de la permission...</Text>
@@ -116,15 +119,17 @@ export class Mycamera extends React.Component {
           <Text>
             La permission pour la caméra n'est pas accordée. Veuillez aller dans les paramètres de votre téléphone pour l'activer.
           </Text>
+        // Si permission accordée :
         ) : (
           <View style={{ flex: 1, width: '100%' }}>
+            {/* Affichage de la caméra */}
             {takePicture ? (
               <Camera
                 style={{ flex: 1 }}
                 type={Camera.Constants.Type.back}
                 ref={cam => this.camera = cam}
-                //onPictureTaken={this.onPictureTaken}
               >
+                {/* Bouton qui prend la photo */}
                 <TouchableOpacity
                   style={styles.button_camera}
                   onPress={() => this.camera.takePictureAsync({
