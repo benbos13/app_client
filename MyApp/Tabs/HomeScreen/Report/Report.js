@@ -100,6 +100,7 @@ export class Mycamera extends React.Component {
   };
 
   handleInputChange(text) {
+    console.log(text);
     this.setState({ inputValue: text });
   }
 
